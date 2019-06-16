@@ -402,6 +402,7 @@ three
 > 사전에 {커피이름 : 가격}을 등록하고 커피이름만 보여준 후 커피이름을 입력하면 가격을 보여준다. coffee={'아메리카노':2500,'카페라떼':3000,'카푸치노':3500}
 
 ```python
+# 1st
 >>> coffee={'아메리카노':2500,'카페라떼':3000,'카푸치노':3500}
 >>> print("메뉴 : 아메리카노\t카페라떼\t카푸치노")
 >>> ch = input("선택 : ")
@@ -410,5 +411,186 @@ three
 ...     print("%s원입니다." %coffee[ch])
 ... else:
 ...     print("원하시는 메뉴가 존재하지 않습니다.")
+
+# 2nd
+>>> coffee={'아메리카노':2500,'카페라떼':3000,'카푸치노':3500}
+>>> for c in coffee:
+... 	print(c,end='  ')
+>>> print()
+>>>
+>>> order = input("선택 :")
+>>> for k,v in coffee.items(): # 튜플로 리턴 (키=k,값=v)
+... 	if k==order:
+... 		print(v)
+```
+
+
+
+#### 2.4.4. 덧셈문제 맞추기
+
+> 1~50 사이 숫자 중 임의의 숫자를 선택해서 덧셈 문제를 내면 맞추는 게임
+
+```python
+# Simple method
+>>> import random
+>>> 
+>>> cnt = 0
+>>> for i in range(0,5):
+...     a = random.randint(1,50)
+...     b = random.randint(1,50)
+...     print("%d + %d = " %(a,b))
+...     c=int(input())
+...     if a+b==c:
+...         print("정답!")
+...         cnt+=1
+...     else: 
+...         print("오답!")
+>>> print("총 %d 개 정답!" %cnt)
+
+# Hard method
+# random.choice() 를 사용 하여 내가 원하는 요소안에서 랜덤으로 뽑을 수 있다.
+# 내장함수 eval() 를 사용하여 operators를 처리하였다.
+>>> import random
+>>>
+>>> cnt = 0
+>>> op_tuple = ('+','-','/','*')
+>>> for i in range(0,5):
+...     a = random.randint(1,50)
+...     b = random.randint(1,50)
+...     op = random.choice(op_list)
+...     print("%d %c %d = " %(a,sym,b))
+...     c=int(input())
+...     if int(eval("%d %c %d" %(a, sym, b)))==c: # 나누기 때문에 int()
+...         print("정답!")
+...         cnt+=1
+...     else: 
+...         print("오답!")
+>>> print("총 %d 개 정답!" %cnt)
+```
+
+
+
+#### 2.4.5. 시간 맞추기 게임
+
+> 시간과 관련된 time 모듈에는 유용한 함수가 굉장히 많다. 사용을 하기 위해서는 import time 을 해야 한다.
+>
+> 문제 : 게임을 시작할 때 사용자가 엔터기를 입력하면 시작한다. 속으로 20 초를 카운트하고 엔터키를 입력하여 가장 근접한 시간 맞추는 게임 time.time()이용 
+
+```python
+>>> import time
+>>> 
+>>> input("엔터를 누르고 20초를 셉니다.")
+>>> start = time.time()
+>>> input("20초 후에 다시 엔터를 누릅니다.")
+>>> end = time.time()
+>>> 
+>>> diff = end - start
+>>> print("실제 시간 :", diff, "초")
+>>> print("차이 :", abs(diff-20), "초")
+```
+
+
+
+#### 2.4.6. 숫자 맞추기 게임
+
+> 1 ~ 100 사이의 숫자 중에 하나를 컴퓨터가 정하면 그 숫자를 맞춘다. 시간과 횟수도 check 하라
+
+```python
+>>> import random
+>>> import time
+>>> 
+>>> target=random.randint(1,100)
+>>> cnt = 0
+>>> print('답 : ',target)
+>>> input("엔터를 누르면 시작합니다!")
+>>> start = time.time()
+>>> 
+>>> while True:
+...     guess = int(input("1~100 사이 숫자를 입력하세요 :"))
+...     cnt += 1 
+...     if guess==target: 
+...         print("정답입니다")
+...         break
+...     elif guess<target:
+...         print("더 큰 수를 입력하세요")
+...     else:
+...         print("더 작은 수를 입력하세요")
+>>> end = time.time()
+>>> 
+>>> diff = end - start
+>>> print("걸린시간은 {:.0f}초 입니다.".format(diff))
+>>> print("걸린횟수는 %d 입니다." %cnt)
+```
+
+
+
+#### 2.4.7. 로또번호 생성
+
+> 1~45사이의 번호 6개를 추출한다. 중복은 허락하지 않으며 총 5번에 겇쳐 번호를 추출하여 정렬하여 출력해준다. **#import random** 안에는 **sample** 라는 함수가 있다. 이 함수는 중복을 허락 하지 않기 때문에 더 쉽게 만들 수 있다.
+
+```python
+# échec
+>>> import random
+>>> 
+>>> for x in range(0,5): 
+...     s = set()
+...     for i in range(0,6): 
+...         s.add(random.randint(1,45))
+...     a_l = list(s)
+...     a_l.sort()
+...     print("로또 : ",a_l)
+
+# réussite
+>>> for i in range(5):
+...     lotto = [0,0,0,0,0,0]
+...     for x in range(6):
+...         num=0
+...         while(num in lotto):
+...             num=random.randint(1,46)
+...         lotto[x]=num
+...     print("로또 : ",sorted(lotto))
+
+# Using function sample 
+>>> for i in range(1,6):
+...     print("로또 ; ",sorted(random.sample(range(1,46),6)))
+```
+
+
+
+#### 2.4.8. 야구게임
+
+> 중복되지 않는 3자리 숫자를 컴퓨터가 정하면 그 숫자를 맞출 때 까지 반복한다. 
+>
+> * 숫자와 자리 위치까지 일치하면 스트라이크 
+> * 숫자는 있는데 자리는 맞지 않는다면 볼
+>
+> 스트라이크가 3개가 되면 맞춘 것이므로 멈춘다. 몇 번 만에 맞춘 것인지 횟수도 체크한다.
+
+```python
+>>> import random
+>>> 
+>>> target = random.sample(range(100,999),3) 
+>>> # 3개의 숫자를 뽑으면 알아서 리스트로 들어간다. 
+>>> print(target)
+>>> strick=0
+>>> check=0
+>>> print("시작")
+>>> 
+>>> while strick != 3:
+...     strick = 0
+...     ball = 0
+...     guess = list(input("3자리 숫자를 입력하세요 :"))
+...     print(guess)
+...     for a in guess:
+...         for b in target:
+...             if int(a) == b:
+...                 if guess.index(a) == target.index(b):
+...                     strike+=1
+...                 else:
+...                     ball+=1
+...     check+=1
+...     print("strike:%d, ball:%d, try:%d" %(strike,ball,check))
+>>> print("정답")   
+
 ```
 
