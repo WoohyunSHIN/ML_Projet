@@ -1,6 +1,6 @@
-// Reference Book : [점프 투 파이썬][https://wikidocs.net/book/1]
+// Reference Book : [점프 투 파이썬](https://wikidocs.net/book/1)
 
-// Written by WoohyunSHIN. I reconstitute the reference book as my style for studying. If you have question or I commit an infrigement of copyright, send me a mail swh159@gmail.com please thank you.
+// Written by WoohyunSHIN. I reconstitute the reference book as my style for studying. If you have question or I commit an infrigement of copyright, send me a mail <swh159@gmail.com> please thank you.
 
 # Python
 
