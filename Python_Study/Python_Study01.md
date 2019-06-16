@@ -1,3 +1,7 @@
+// Reference Book : [점프 투 파이썬][https://wikidocs.net/book/1]
+
+// Written by WoohyunSHIN. I reconstitute the reference book as my style for studying. If you have question or I commit an infrigement of copyright, send me a mail swh159@gmail.com please thank you.
+
 # Python
 
 ***
@@ -79,7 +83,7 @@ a = 0o177
 
 > 기본적인 사칙연산 { +,-,*,/ } 가 존재하며 특수한 연산자로써 **,%,// 등이 존재한다.
 
-####1.2.1. ** 연산자
+#### 1.2.1. ** 연산자
 
 ```python
 >>> a=3
@@ -88,7 +92,7 @@ a = 0o177
 81	#a^b 값을 리턴한다
 ```
 
-####1.2.2. % 연산자
+#### 1.2.2. % 연산자
 
 ```python
 >>>  7%3
@@ -97,7 +101,7 @@ a = 0o177
 3 #나눗셈 후 나머지를 리턴한다
 ```
 
-####1.2.3. // 연산자
+#### 1.2.3. // 연산자
 
 ```python
 >>> 7/4
@@ -113,11 +117,11 @@ a = 0o177
 
 
 
-### 1.3. 문자열(String)
+### 1.3.  문자열(String)
 
 > 파이썬에는 문자열을 만드는 여러 가지 방법이 존재한다. 예시를 통해서 알아보자
 
-####1.3.1. 큰 따옴표(")로 양쪽 둘러싸기
+#### 1.3.1. 큰 따옴표(")로 양쪽 둘러싸기
 
 ```python
 >>> food = "Python's favorite food is perl"
@@ -126,7 +130,7 @@ Python's favorite food is perl
 # 문장안의 ' 작은 따옴표를 살리고 싶은 경우 사용한다.
 ```
 
-####1.3.2. 작은 따옴표(')로 양쪽 둘러싸기
+#### 1.3.2.  작은 따옴표(')로 양쪽 둘러싸기
 
 ```python
 >>> say = '"Python is very easy" he says.'
@@ -135,7 +139,7 @@ Python's favorite food is perl
 # 문안의 " 큰 따옴표를 살리고 싶은 경우 사용한다.
 ```
 
-####1.3.3. C언어와 같이 백슬래시( \ ) 를 사용하면 큰, 작은 따옴표들을 문자열에 포함시킬 수 있다. 
+#### 1.3.3. C언어와 같이 백슬래시( \ ) 를 사용하면 큰, 작은 따옴표들을 문자열에 포함시킬 수 있다. 
 
 ```python
 >>> food = "Python\'s favorite food is perl"
@@ -147,7 +151,7 @@ Python's favorite food is perl
 "Python is very easy" he says.
 ```
 
-####1.3.4. 여러 줄인 문자열을 변수에 대입하고 싶을 때는 **"""** 또는 **'''** 를 사용한다.
+#### 1.3.4. 여러 줄인 문자열을 변수에 대입하고 싶을 때는 **"""** 또는 **'''** 를 사용한다.
 
 ```python
 >>> multiline="""
