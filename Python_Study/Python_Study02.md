@@ -594,3 +594,37 @@ three
 
 ```
 
+
+
+### 2.4.9. 타자게임
+
+>  Input 함수를 이용하여 사용자가 타자 게임을 시작할 준비를 하고 Enter 를 누를 때까지 기다림. 여러 개의 단어 중 5개의 단어를 무작위로 추출하여 보여주고 정확하게 입력하면 다음 단어로 넘어가도록한다. 시작시간과 끝나는 시간을 체크하여 5개의 단어를 입력하는데 얼마의 시간이 걸렸는지 알려준다.
+
+```python
+>>> import random
+>>> import time
+>>> 
+>>> n=1
+>>> w = ["cat","dog","fox","monkey","mouse","panda","frog","snake","wolf"]
+>>> q=random.choice(w)
+>>> input("시작!")
+>>> start = time.time()
+>>> 
+>>> while n<=5:
+...     print("*문제",n)
+...     print(q)
+...     x=input()
+...     if q == x:
+...         print("통과!")
+...         n+=1
+...         q=random.choice(w)
+...     else:
+...         print("오타! 다시도전!")
+>>> 
+>>> end = time.time()
+>>> t=end-start
+>>> print("타자 시간 : {:.0f}초".format(t))
+```
+
+
+
