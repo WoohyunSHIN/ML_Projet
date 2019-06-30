@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>테이블 테그 관련 연습</title>
+    </head>
+    <body>
+        <h1>테이블 작성</h1>
+        <table cellpadding="10" border="1">
+            <tr>
+                <td>1*1셀</td> <!-- 계정관리 DB를 할때 여기 부분은 변수 부분이되고-->
+                <td>1*2셀</td>
+            </tr>
+            <tr>
+                <td>2*1셀</td> <!-- 계정관리 DB를 할때 여기 부분은 여러 고객의 정보 부분이 되기때문에 "for"문을 처리할 수 있다.-->
+                <td>2*2셀</td>
+            </tr>
+        </table>
+        <br>
+        <table border="1">
+            <tr>
+                <td colspan="2">1*1셀</td>
+            </tr>
+            <tr>
+                <td>2*1셀</td>
+                <td>2*2셀</td>
+            </tr>
+        </table>
+        <br>
+        <table border="1">
+            <tr>
+                <td rowspan="2">1*1셀</td>
+                <td>1*2셀</td>
+            </tr>
+            <tr>
+                <td>2*2셀</td>
+            </tr>
+        </table>        
+        <br>
+        <table cellspacing="5" border="1">
+            <tr>
+                <td>cellspacing 5인 테이블</td> 
+                <td>cellspacing 5인 테이블</td>
+            </tr>
+            <tr>
+                <td>cellspacing 5인 테이블</td> 
+                <td>cellspacing 5인 테이블</td>
+            </tr>
+        </table>
+        <br>
+        <table cellspacing="0" border="1">
+            <tr>
+                <td>cellspacing 0인 테이블</td> 
+                <td>cellspacing 0인 테이블</td>
+            </tr>
+            <tr>
+                <td>cellspacing 0인 테이블</td> 
+                <td>cellspacing 0인 테이블</td>
+            </tr>
+        </table>
+    </body>
+</html>
